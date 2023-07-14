@@ -1,0 +1,90 @@
+{
+  "unpublishedPage": {
+    "name": "Page1",
+    "slug": "page1",
+    "layouts": [
+      {
+        "viewMode": false,
+        "dsl": {
+          "widgetName": "MainContainer",
+          "backgroundColor": "none",
+          "rightColumn": 4896,
+          "snapColumns": 64,
+          "detachFromLayout": true,
+          "widgetId": "0",
+          "topRow": 0,
+          "bottomRow": 520,
+          "containerStyle": "none",
+          "snapRows": 124,
+          "parentRowSpace": 1,
+          "type": "CANVAS_WIDGET",
+          "canExtend": true,
+          "version": 80,
+          "minHeight": 1292,
+          "dynamicTriggerPathList": [],
+          "parentColumnSpace": 1,
+          "dynamicBindingPathList": [],
+          "leftColumn": 0,
+          "children": [
+            {
+              "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+              "mobileBottomRow": 52,
+              "widgetName": "Iframe1",
+              "srcDoc": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\" />\n    <title>Document</title>\n  </head>\n  <body>\n    <h3>The message from the parent appears below:</h3>\n    <div id=\"message\">Please send some message from the input above.</div>\n    <script>\n      window.addEventListener(\"message\", function (event) {\n        document.querySelector(\"#message\").innerText =\n          typeof event.data === \"string\"\n            ? event.data\n            : JSON.stringify(event.data);\n      });\n    </script>\n    <input style=\"margin-top: 1em;\" type=\"text\" id=\"messageText\" />\n    <button id=\"sendMessage\">Send Message to Parent</button>\n    <script>\n      var button = document.querySelector(\"#sendMessage\");\n      button.addEventListener(\"click\", function () {\n        var message = document.querySelector(\"#messageText\").value;\n        window.parent.postMessage(message, \"*\");\n      });\n    </script>\n  </body>\n</html>",
+              "displayName": "Iframe",
+              "iconSVG": "/static/media/icon.19c3fa45ba777cc28a04f390d5703b53.svg",
+              "searchTags": [
+                "embed"
+              ],
+              "topRow": 20,
+              "bottomRow": 52,
+              "parentRowSpace": 10,
+              "source": "",
+              "type": "IFRAME_WIDGET",
+              "hideCard": false,
+              "mobileRightColumn": 25,
+              "borderOpacity": 100,
+              "animateLoading": true,
+              "parentColumnSpace": 10.53125,
+              "dynamicTriggerPathList": [],
+              "leftColumn": 1,
+              "dynamicBindingPathList": [
+                {
+                  "key": "borderRadius"
+                },
+                {
+                  "key": "boxShadow"
+                }
+              ],
+              "borderWidth": "31",
+              "key": "2oan96ukkw",
+              "isDeprecated": false,
+              "rightColumn": 62,
+              "widgetId": "2hu9ul9v9u",
+              "isVisible": true,
+              "version": 1,
+              "parentId": "0",
+              "renderMode": "CANVAS",
+              "isLoading": false,
+              "mobileTopRow": 20,
+              "responsiveBehavior": "fill",
+              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+              "mobileLeftColumn": 1
+            }
+          ]
+        },
+        "layoutOnLoadActions": [],
+        "layoutOnLoadActionErrors": [],
+        "validOnPageLoadActions": true,
+        "id": "Page1",
+        "deleted": false,
+        "policies": [],
+        "userPermissions": []
+      }
+    ],
+    "userPermissions": [],
+    "policies": []
+  },
+  "deleted": false,
+  "gitSyncId": "64af840a5e8dec637d7c9bae_64af840a5e8dec637d7c9bb0"
+}
